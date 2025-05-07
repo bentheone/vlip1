@@ -38,7 +38,9 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-6 w-full gap-6 mt-3 text-center">
         {loading ? <p>Loading...</p> : movies.slice(0,12).map(movie => (
+          <Link to={`/movie/${movie.id}`}>
           <MovieCard key={movie.id} title={movie.title} poster={movie.poster_path} year={movie.release_date} rating={movie.vote_average}/>
+          </Link>
         ))}
       </div>
     </div>
@@ -49,7 +51,9 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-6 w-full gap-6 mt-3 text-center">
         {loading ? <p>Loading...</p> : movies.slice(12,24).map(movie => (
+          <Link to={`/movie/${movie.id}`}>
           <MovieCard key={movie.id} title={movie.title} poster={movie.poster_path} year={movie.release_date} rating={movie.vote_average}/>
+          </Link>
         ))}
       </div>
     </div>

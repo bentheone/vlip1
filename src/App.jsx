@@ -1,21 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
-import {BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import Aboutus from './componets/Aboutus'
-import Body from './componets/Body'
-import Header from './componets/Navbar'
-import Hero from './componets/Hero'
+import Home from './pages/Home'
+import MoviePage from './pages/MoviePage'
+
+
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
-    <div className="bg-black text-white">
-      <Header/>
-      <Hero/>
-      <Body/>
-      <Aboutus/>
-      </div>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/movie/:id' element={<MoviePage/>}/>
+    </Routes>
     </BrowserRouter>
     </>
   )
